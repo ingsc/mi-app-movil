@@ -13,15 +13,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
-        uses: actions/setup
--node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Configurar Java
 (OpenJDK 21)
-        uses: actions/setup
--java@v4
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
@@ -41,8 +39,7 @@ jobs:
           ./gradlew assembleDebug
 
       - name: Subir APK generada como artefacto
-        uses: actions/upload
--artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
           path: android/app/build/
