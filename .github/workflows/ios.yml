@@ -46,7 +46,8 @@ jobs:
           fi
           #forzamos una instalacion limpia eliminando locks antiguo
           rm -rf Pods Podfile.lock
-          pod install
+          pod cache clean --all
+          pod install --repo-update
 
       - name: Compilar proyecto ios (Simulador)
         run: |
