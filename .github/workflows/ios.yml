@@ -27,7 +27,6 @@ jobs:
 
       - name: Sincronizar capacitor para generar plataforma iOS
         run: npx cap sync ios
-
            
       - name: Asegurar estructura e instalar CocoPods
         run: |
@@ -54,8 +53,8 @@ jobs:
       - name: Compilar proyecto ios (Simulador)
         run: |
           cd ios
-          NO_COLOR=1 xcodebuild 
-          -workspace App/App.xcworkspace \
+          NO_COLOR=1 xcodebuild \ 
+          -workspace App.xcworkspace \
           -scheme App \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 17e' \
