@@ -1,0 +1,46 @@
+name: Compilar App de iOS
+
+on:
+  push:
+    branches: [ "main" ]
+
+  jobs:
+    build-ios:
+      runs-on: macos-latest
+
+      steps:
+        - name: Clonar repositorio
+          uses: actions/checkout@v4
+
+        - name: Configurar Node.js
+          uses: actions/setup-node@v4
+
+          with:
+            node-version: '24'
+            cache: 'npm'
+
+        - name: Instalar dependencias del proyecto web
+          run: npm install
+
+        - name: Compilar aplicacion web
+          run: npm run build
+
+        - name: Sincronizar proyecto con Capacitor ios
+          run: npx cap sync ios
+
+        - name: Instalar CocoPods
+          run: |
+            cd ios/App
+            pod install
+
+        - name: Compilar proyecto ios (Simulador)
+          run: |
+            cd ios/App
+            xcodebuild -workspace App.xcworkspace \
+            -scheme App \
+            -sdk iphonesimulator \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+  
