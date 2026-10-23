@@ -32,12 +32,12 @@ jobs:
 
       - name: Instalar CocoPods
         run: |
-          cd ios/App
+          cd ios
           pod install
 
       - name: Compilar proyecto ios (Simulador)
         run: |
-          cd ios/App
+          cd ios
           xcodebuild -workspace App.xcworkspace \
           -scheme App \
           -sdk iphonesimulator \
