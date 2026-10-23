@@ -50,9 +50,13 @@ jobs:
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 17e' \
           -configuration Debug \
-          CODE_SIGN_IDENTITY="" \
-          CODE_SIGNING_REQUIRED=NO \
-          CODE_SIGNING_ALLOWED=NO \
-          build
+          -derivedDataPath ./DerivedData \
 
-  
+          CODE_SIGN_IDENTITY="" \
+
+          CODE_SIGNING_REQUIRED=NO \
+
+          CODE_SIGNING_ALLOWED=NO \
+
+          ONLY_ACTIVE_ARCH=YES \
+          build
