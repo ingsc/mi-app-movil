@@ -30,9 +30,17 @@ jobs:
           npx cap add ios || true
           npx cap sync ios
 
-      - name: Instalar CocoPods
+      - name: Asegurar estructura e instalar CocoPods
         run: |
           cd ios
+          # si por alguna razon no se crea lo creamos para evitar el fallo
+          if [ ! -f Podfile ];
+          then
+             echo "platform :ios, '13.0'" > Podfile
+             echo "target 'App' do" >> Podfile
+             echo "use_frameworks!" >> Podfile
+             echo "end" >> Podfile
+          fi
           pod install
 
       - name: Compilar proyecto ios (Simulador)
