@@ -54,7 +54,7 @@ jobs:
           xcodebuild -workspace App.xcworkspace \
           -scheme App \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator ,name=iPhone Air' \
+          -destination 'platform=iOS Simulator,name=iPhone 17e' \
           -configuration Debug \
           CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO \
