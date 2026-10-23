@@ -45,7 +45,7 @@ jobs:
       - name: Compilar proyecto ios (Simulador)
         run: |
           cd ios
-          xcodebuild -workspace App.xcworkspace \
+          NO_COLOR=1 xcodebuild -workspace App.xcworkspace \
           -scheme App \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 17e' \
@@ -59,4 +59,8 @@ jobs:
           CODE_SIGNING_ALLOWED=NO \
 
           ONLY_ACTIVE_ARCH=YES \
+
+          GCC_PREPROCESSOR_DEFINITIONS="" \
+
+          COMPILER_INDEX_STORE_ENABLE=NO \
           build
