@@ -32,9 +32,9 @@ jobs:
       - name: Asegurar estructura e instalar CocoPods
         run: |
           cd ios
-          # si por alguna razon no se crea lo creamos para evitar el fallo
-          if [ ! -f Podfile ] || ! grep -q "App.xcodeproj" Podfile;
-          then
+          # limpiar primero para asegurar el entorno desde cero
+          rm -rf Pods Podfile.lock DerivedData
+          # creamos el Podfile o lo reescribimos limpio 
              echo "platform :ios, '13.0'" > Podfile
              echo "use_frameworks!" >> Podfile
              echo "" >> Podfile
