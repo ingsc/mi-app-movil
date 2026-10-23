@@ -44,6 +44,8 @@ jobs:
              echo " # Anade aqui tus pods" >> Podfile
              echo "end" >> Podfile
           fi
+          #forzamos una instalacion limpia eliminando locks antiguo
+          rm -rf Pods Podfile.lock
           pod install
 
       - name: Compilar proyecto ios (Simulador)
