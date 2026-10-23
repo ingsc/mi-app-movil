@@ -34,11 +34,14 @@ jobs:
         run: |
           cd ios
           # si por alguna razon no se crea lo creamos para evitar el fallo
-          if [ ! -f Podfile ];
+          if [ ! -f Podfile ] || ! grep -q "App.xcodeproj" Podfile;
           then
              echo "platform :ios, '13.0'" > Podfile
-             echo "target 'App' do" >> Podfile
              echo "use_frameworks!" >> Podfile
+             echo "" >> Podfile
+             echo "target 'App' do" >> Podfile
+             echo " project 'App/App.xcodeproj'" >> Podfile
+             echo " # Anade aqui tus pods" >> Podfile
              echo "end" >> Podfile
           fi
           pod install
