@@ -25,10 +25,7 @@ jobs:
       - name: Compilar aplicacion web
         run: npm run build
 
-      - name: Sincronizar capacitor y limpiar iOS
-        run: |
-          npx cap sync ios
-     
+           
       - name: Asegurar estructura e instalar CocoPods
         run: |
           cd ios
@@ -53,7 +50,6 @@ jobs:
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 17e' \
           -configuration Debug \
-          -derivedDataPath ./DerivedData \
           CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGNING_ALLOWED=NO \
