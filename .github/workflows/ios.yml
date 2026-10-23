@@ -53,4 +53,16 @@ jobs:
       - name: Compilar proyecto ios (Simulador)
         run: |
           cd ios
-          NO_COLOR=1 xcodebuild -workspace App.xcworkspace-scheme App -sdk iphonesimulator-destination 'platform=iOS Simulator,name=iPhone 17e'-configuration Debug -derivedDataPath ./DerivedData CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=YES GCC_PREPROCESSOR_DEFINITIONS="" COMPILER_INDEX_STORE_ENABLE=NO build
+          NO_COLOR=1 xcodebuild
+          -workspace App.xcworkspace
+          -scheme App -sdk iphonesimulator
+          -destination 'platform=iOS Simulator,name=iPhone 17e'
+          -configuration Debug 
+          -derivedDataPath ./DerivedData 
+          CODE_SIGN_IDENTITY="" 
+          CODE_SIGNING_REQUIRED=NO
+          CODE_SIGNING_ALLOWED=NO
+          ONLY_ACTIVE_ARCH=YES
+          GCC_PREPROCESSOR_DEFINITIONS=""
+          COMPILER_INDEX_STORE_ENABLE=NO
+          build
