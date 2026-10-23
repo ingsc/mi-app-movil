@@ -35,16 +35,13 @@ jobs:
           # limpiar primero para asegurar el entorno desde cero
           rm -rf Pods Podfile.lock DerivedData
           # creamos el Podfile o lo reescribimos limpio 
-             echo "platform :ios, '13.0'" > Podfile
-             echo "use_frameworks!" >> Podfile
-             echo "" >> Podfile
-             echo "target 'App' do" >> Podfile
-             echo " project 'App/App.xcodeproj'" >> Podfile
-             echo " # Anade aqui tus pods" >> Podfile
-             echo "end" >> Podfile
+          echo "platform :ios, '13.0'" > Podfile
+          echo "use_frameworks!" >> Podfile
+          echo "" >> Podfile
+          echo "target 'App' do" >> Podfile
+          echo " project 'App/App.xcodeproj'" >> Podfile
+          echo "end" >> Podfile
 
-          #forzamos una instalacion limpia eliminando locks antiguo
-          rm -rf Pods Podfile.lock DerivedData
           pod cache clean --all
           pod install --repo-update
 
