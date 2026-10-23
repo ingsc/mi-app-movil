@@ -25,6 +25,9 @@ jobs:
       - name: Compilar aplicacion web
         run: npm run build
 
+      - name: Sincronizar capacitor para generar plataforma iOS
+        run: npx cap sync ios
+
            
       - name: Asegurar estructura e instalar CocoPods
         run: |
