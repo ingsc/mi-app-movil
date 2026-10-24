@@ -57,7 +57,7 @@ jobs:
           -workspace App.xcworkspace \
           -scheme App \ 
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 17e' \
+          -destination 'iphonesimulator,name=iPhone 17e' \
           -configuration Debug \ 
           -derivedDataPath ./DerivedData \ 
           CODE_SIGN_IDENTITY="" \ 
