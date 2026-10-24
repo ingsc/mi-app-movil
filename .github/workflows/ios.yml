@@ -57,13 +57,12 @@ jobs:
           -workspace App.xcworkspace \
           -scheme App \ 
           -sdk iphonesimulator \
-          -destination 'iphonesimulator,name=iPhone 17e' \
+          -destination "platform=ios Simulator,name=iPhone 17e" \
           -configuration Debug \ 
-          -derivedDataPath ./DerivedData \ 
+          -derivedDataPath "./DerivedData" \ 
           CODE_SIGN_IDENTITY="" \ 
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGNING_ALLOWED=NO \
           ONLY_ACTIVE_ARCH=YES \
           GCC_PREPROCESSOR_DEFINITIONS="" \
-          COMPILER_INDEX_STORE_ENABLE=NO \
-          build
+          COMPILER_INDEX_STORE_ENABLE=NO 
