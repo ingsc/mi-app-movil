@@ -73,6 +73,5 @@ jobs:
 
              "COMPILER_INDEX_STORE_ENABLE=NO"
                       )
-
                       xcodebuild "${XCODE_ARGS[@]}" build
-
+                     
