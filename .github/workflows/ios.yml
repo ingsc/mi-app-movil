@@ -69,7 +69,7 @@ jobs:
     GCC_PREPROCESSOR_DEFINITIONS=""
 
     COMPILER_INDEX_STORE_ENABLE=NO
-                )
+                      )
 
                 xcodebuild ${XCODE_ARGS[@]} build
 
