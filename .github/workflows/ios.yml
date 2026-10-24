@@ -52,11 +52,11 @@ jobs:
 
       - name: Compilar proyecto ios (Simulador)
         run: |
-          cd ios
+          cd ios/App
           set -e
 
           XCODE_ARGS=(
-             "-workspace" "App.xcworkspace"
+             "-project" "App.xcodeproj"
              "-scheme" "App"
              "-sdk" "iphonesimulator"
              "-destination" "platform=iOS Simulator,name=iPhone 17e"
